@@ -18,7 +18,7 @@ jobs:
     name: Build for Multiple Kernels
     strategy:
       matrix:
-        ubuntu: ['20.04', '22.04', '24.04']
+        ubuntu: ['24.04'] #, '22.04', '20.04']
     runs-on: ubuntu-${{ matrix.ubuntu }}
     
     steps:
