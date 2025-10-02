@@ -1,0 +1,9 @@
+jamvox-driver (1.0.0-1) unstable; urgency=medium
+
+  * Initial release
+  * Support for VOX Jamvox USB audio interface
+  * Playback and capture support
+  * 44.1kHz and 48kHz sample rates
+  * 16-bit and 24-bit audio depth
+
+ -- pissalou <pissalou@github.com>  Thu, 02 Oct 2025 16:29:28 +0200

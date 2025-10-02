@@ -1,0 +1,3 @@
+# Jamvox USB Audio Interface
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0944", ATTRS{idProduct}=="0117", MODE="0666", GROUP="audio"
+KERNEL=="controlC[0-9]*", ATTRS{idVendor}=="0944", ATTRS{idProduct}=="0117", MODE="0666", GROUP="audio"

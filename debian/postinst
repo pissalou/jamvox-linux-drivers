@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        if [ -x /bin/udevadm ]; then
+            udevadm control --reload-rules || true
+            udevadm trigger || true
+        fi
+        if [ -x /sbin/depmod ]; then
+            depmod -a || true
+        fi
+        echo "Jamvox driver installed successfully."
+        echo "To load the driver: sudo modprobe jamvox"
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

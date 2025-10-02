@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        if lsmod | grep -q "^jamvox "; then
+            modprobe -r jamvox || true
+        fi
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

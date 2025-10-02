@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with dkms
+
+override_dh_auto_configure:
+	# Nothing to configure
+
+override_dh_auto_build:
+	# Building is handled by DKMS
+
+override_dh_auto_install:
+	install -D -m 644 dkms.conf $(CURDIR)/debian/jamvox-driver-dkms/usr/src/jamvox-1.0.0/dkms.conf
+	install -D -m 644 src/jamvox.c $(CURDIR)/debian/jamvox-driver-dkms/usr/src/jamvox-1.0.0/jamvox.c
+	install -D -m 644 Makefile.dkms $(CURDIR)/debian/jamvox-driver-dkms/usr/src/jamvox-1.0.0/Makefile
+	install -D -m 644 conf/jamvox.conf $(CURDIR)/debian/jamvox-driver-dkms/etc/modprobe.d/jamvox.conf
+	install -D -m 644 conf/Jamvox.alsa.conf $(CURDIR)/debian/jamvox-driver-dkms/usr/share/alsa/cards/Jamvox.conf
+	install -D -m 644 conf/99-jamvox.rules $(CURDIR)/debian/jamvox-driver-dkms/etc/udev/rules.d/99-jamvox.rules
+
+override_dh_dkms:
+	dh_dkms -V 1.0.0

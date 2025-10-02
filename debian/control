@@ -1,0 +1,20 @@
+Source: jamvox-driver
+Section: sound
+Priority: optional
+Maintainer: pissalou <pissalou@github.com>
+Build-Depends: debhelper-compat (= 13),
+               dkms,
+               linux-headers-generic | linux-headers
+Standards-Version: 4.6.0
+Homepage: https://github.com/pissalou/jamvox-driver
+
+Package: jamvox-driver-dkms
+Architecture: all
+Depends: ${misc:Depends}, dkms, alsa-utils
+Description: VOX Jamvox USB Audio Interface Driver
+ This package provides a Linux kernel driver for the VOX Jamvox
+ USB audio interface. It supports audio playback and recording
+ at 44.1kHz and 48kHz sample rates with 16-bit and 24-bit depth.
+ .
+ The driver is built using DKMS (Dynamic Kernel Module Support)
+ which automatically rebuilds the module when the kernel is updated.

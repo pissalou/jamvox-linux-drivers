@@ -1,0 +1,31 @@
+# Build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+.tmp_versions/
+modules.order
+Module.symvers
+.*.cmd
+
+# Debian packaging
+debian/files
+debian/.debhelper/
+debian/jamvox-driver-dkms/
+debian/*.log
+debian/*.substvars
+
+# Generated files
+*.deb
+*.changes
+*.buildinfo
+*.build
+
+# Editor files
+*~
+*.swp
+.vscode/
+.idea/
+
+# OS files
+.DS_Store

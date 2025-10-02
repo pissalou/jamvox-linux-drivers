@@ -1,0 +1,3 @@
+conf/jamvox.conf etc/modprobe.d/
+conf/Jamvox.alsa.conf usr/share/alsa/cards/
+conf/99-jamvox.rules etc/udev/rules.d/
