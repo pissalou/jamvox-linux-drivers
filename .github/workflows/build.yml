@@ -41,15 +41,11 @@ jobs:
       - name: Build package
         run: |
           dpkg-buildpackage -us -uc -b
-          ls -l ..
-
-      - name: Locate debian package
-        run: |
-          find .. -type f -name '*.deb' -exec realpath {} \;
+          mv ../*.deb . # resulting .deb package is written to the parent directory, move back to workspace
   
       - name: Upload package for Ubuntu ${{ matrix.ubuntu }}
         uses: actions/upload-artifact@v4
         with:
           name: package-ubuntu-${{ matrix.ubuntu }}
-          path: "**/*.deb"
+          path: "*.deb"
           retention-days: 30
