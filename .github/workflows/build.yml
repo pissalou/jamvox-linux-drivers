@@ -29,6 +29,7 @@ jobs:
             debhelper \
             devscripts \
             dkms \
+            dh-dkms \
             build-essential \
             linux-headers-$(uname -r) \
             fakeroot \
