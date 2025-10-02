@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: pissalou <pissalou@github.com>
 Build-Depends: debhelper-compat (= 13),
-               dkms,
+               dh-dkms, dkms,
                linux-headers-generic | linux-headers
 Standards-Version: 4.6.0
 Homepage: https://github.com/pissalou/jamvox-driver
