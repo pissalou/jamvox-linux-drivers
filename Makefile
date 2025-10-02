@@ -1,5 +1,3 @@
-obj-m += jamvox.o
-
 KVERSION := $(shell uname -r)
 KDIR := /lib/modules/$(KVERSION)/build
 PWD := $(shell pwd)
